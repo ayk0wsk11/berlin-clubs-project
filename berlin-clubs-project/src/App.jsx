@@ -1,6 +1,5 @@
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
-import { API_URL } from "./config";
 
 // ******************** Pages  ********************
 import HomePage from "./pages/HomePage";
