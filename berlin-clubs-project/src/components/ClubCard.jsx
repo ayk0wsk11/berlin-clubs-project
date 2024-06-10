@@ -1,28 +1,39 @@
-import "../stylesheet/AllClubsPage.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import "../stylesheet/ClubCard.css";
 
 const ClubCard = ({ oneClub }) => {
+  const nav = useNavigate();
   return (
     <div id="clubmap-container">
+      <div id="btn-container">
+        <div>
+          <Link to={"/edit-club"}>
+          <button className="button">Edit</button>
+
+          </Link>
+        </div>
+      <div>
+        <button className="button" onClick={()=>{}}>Delete</button>
+      </div>
+      </div>
+
+
       <div key={oneClub.id} id="clubmap-card">
-        <Link to={`/club-detail/${oneClub.id}`}>
-          <div id="linkeable-detail">
-            <div>
-              <button className="button">Edit</button>
-            </div>
-            <div id="img-header">
-              <img id="clubmap-image" src={oneClub.image} alt={oneClub.name} />
-              <h2>{oneClub.name}</h2>
-            </div>
-            <div>
-              <button className="button">Delete</button>
-            </div>
+        <div id="linkeable-detail">
+          <div id="img-header">
+            <img id="clubmap-image" src={oneClub.image} alt={oneClub.name} />
+            <h2>{oneClub.name}</h2>
           </div>
-        </Link>
+          <div></div>
+        </div>
         <div id="clubcard-container">
           <div id="clubcard-details">
             <h2>Details:</h2>
-            <p>Main-genre: {oneClub.genre[0]}</p>
+            {oneClub.genre.map((oneGenre, index) => (
+              <label id="label" key={index}>
+                {oneGenre}
+              </label>
+            ))}
             <p>Capacity: {oneClub.capacity}</p>
             <p>
               Description: <br /> {oneClub.description}

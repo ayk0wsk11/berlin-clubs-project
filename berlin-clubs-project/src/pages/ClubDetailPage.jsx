@@ -1,11 +1,13 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { API_URL } from "../config";
 import ClubCard from "../components/ClubCard";
 
 const ClubDetailPage = () => {
   const [oneClub, setOneClub] = useState(null);
+  const nav = useNavigate();
+  
 
   const { clubId } = useParams();
   console.log("my club id", clubId);
@@ -18,6 +20,7 @@ const ClubDetailPage = () => {
 
         setOneClub(data);
         console.log("my one Club", oneClub);
+
       } catch (error) {
         console.log(error);
       }
