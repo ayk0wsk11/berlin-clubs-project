@@ -6,6 +6,7 @@ import SearchPage from './pages/Search';
 
 
 
+
 // ******************** Pages  ********************
 import HomePage from "./pages/HomePage";
 import NotFound from "./pages/NotFound";
