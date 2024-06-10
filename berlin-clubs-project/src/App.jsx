@@ -11,14 +11,18 @@ import AllClubsPage from "./pages/AllClubsPage";
 
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
+import AddClub from "./pages/AddClub";
+import EditClub from "./pages/EditClub";
 
 function App() {
   return (
     <div>
       <Navbar />
       <Routes>
+        <Route path="/edit-club" element={<EditClub/>}/>
+        <Route path="/add-club" element={<AddClub/>}/>
         <Route path="/" element={<HomePage />} />
-        <Route path="/club-detail/:id" element={<ClubDetailPage />} />
+        <Route path="/club-detail/:clubId" element={<ClubDetailPage />} />
         <Route path="/clubs" element={<AllClubsPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

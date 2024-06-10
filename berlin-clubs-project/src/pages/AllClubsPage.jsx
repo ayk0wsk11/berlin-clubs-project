@@ -1,8 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { API_URL } from "../config";
+import { Link } from "react-router-dom";
 import "../stylesheet/AllClubsPage.css";
-import ClubCard from "../components/ClubCard";
 
 const AllClubsPage = () => {
   const [clubs, setClubs] = useState([]);
@@ -20,9 +20,30 @@ const AllClubsPage = () => {
   }, []);
 
   return (
-    <div id="clubmap-container">
+    <div>
       {clubs.map((oneClub) => {
-        return <ClubCard oneClub={oneClub} key={oneClub.id} />;
+        return (
+          <div key={oneClub.id} id="all-clubs-container">
+            <div id="left-side">
+              <div id="header">
+                <Link to={`/club-detail/${oneClub.id}`}>
+                  <h1>{oneClub.name}</h1>
+                </Link>
+              </div>
+              <div id="genres">
+                {oneClub.genre.map((oneGenre, index) => (
+                  <label id="label" key={index}>
+                    {oneGenre}
+                  </label>
+                ))}
+              </div>
+            </div>
+            <div>
+            <img id="clubmap-image" src={oneClub.image} alt={oneClub.name} />
+
+            </div>
+          </div>
+        );
       })}
     </div>
   );

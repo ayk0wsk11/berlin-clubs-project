@@ -1,57 +1,41 @@
-#clubmap-container{
-  width: 100vw;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-content: stretch;
-
-}
-
-
-#clubmap-card{
-  display: flex;
-  flex-direction: column;
-  width: 45%;
-  height: 25%;
-  margin: 10px;
-  padding: 10px;
-  border-radius: 10px;
-  
-}
-
-#linkeable-detail{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: rgb(170, 170, 229);
-}
-#clubmap-image{
-  width: 20vw;
-}
-
-#clubcard-container{
-  display: flex;
-  justify-content: space-between;
+body {
   width: 100%;
 }
 
-#clubcard-details{
-  background-color: rgb(163, 156, 156);
-  width: 50%;
+#all-clubs-container {
+  display: flex;
+  width: 90vw;
+  justify-content: space-between;
+  background-color: aqua;
+  border: 1px solid black;
+  padding: 10px;
+  margin: 10px;
 }
 
-#edit-delete-btn{
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
+#header {
+  background-color: brown;
 }
 
-#clubcard-address{
-  background-color: rgb(181, 72, 72);
+#genres {
+  background-color: grey;
+  display: flex;
+}
+
+#left-side {
   width: 50%;
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  margin: 5px 2px;
 }
 
-
+#label {
+  background-color: rgb(74, 74, 214);
+  border: 2px solid black;
+  color: white;
+  font-weight: bolder;
+  border-radius: 5px;
+  margin: 5px;
+}
