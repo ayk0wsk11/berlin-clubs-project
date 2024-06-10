@@ -1,52 +1,55 @@
-#clubmap-container{
+#clubmap-container {
   width: 100vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-content: stretch;
-
 }
 
-
-#clubmap-card{
+#clubmap-card {
   display: flex;
   flex-direction: column;
   width: 45%;
   height: 25%;
   margin: 10px;
   padding: 10px;
-  border-radius: 10px;
-  
 }
 
-#linkeable-detail{
+#linkeable-detail {
+  display: flex;
+  justify-content: space-around;
+}
+#img-header{
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: rgb(170, 170, 229);
 }
-#clubmap-image{
+
+.button{
+  width: 90px;
+  background-color: rgb(99, 93, 93);
+  color: white;
+  border: 1px solid black;
+  font-weight: bold;
+
+}
+#clubmap-image {
   width: 20vw;
 }
 
-#clubcard-container{
+#clubcard-container {
   display: flex;
   justify-content: space-between;
   width: 100%;
 }
 
-#clubcard-details{
+#clubcard-details {
   background-color: rgb(163, 156, 156);
   width: 50%;
 }
 
-#edit-delete-btn{
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-}
-
-#clubcard-address{
+#clubcard-address {
   background-color: rgb(181, 72, 72);
   width: 50%;
   display: flex;

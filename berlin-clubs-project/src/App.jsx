@@ -18,7 +18,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/club-detail/:id" element={<ClubDetailPage />} />
+        <Route path="/club-detail/:clubId" element={<ClubDetailPage />} />
         <Route path="/clubs" element={<AllClubsPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
