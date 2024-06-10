@@ -1,0 +1,57 @@
+#clubmap-container{
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: stretch;
+
+}
+
+
+#clubmap-card{
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  height: 25%;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  
+}
+
+#linkeable-detail{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(170, 170, 229);
+}
+#clubmap-image{
+  width: 20vw;
+}
+
+#clubcard-container{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+#clubcard-details{
+  background-color: rgb(163, 156, 156);
+  width: 50%;
+}
+
+#edit-delete-btn{
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+#clubcard-address{
+  background-color: rgb(181, 72, 72);
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
