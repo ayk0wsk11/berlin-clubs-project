@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { API_URL } from "../config";
+import { Link } from "react-router-dom";
 import "../stylesheet/AllClubsPage.css";
 import ClubCard from "../components/ClubCard";
 
@@ -20,11 +21,12 @@ const AllClubsPage = () => {
   }, []);
 
   return (
-    <div id="clubmap-container">
-      {clubs.map((oneClub) => {
-        return <ClubCard oneClub={oneClub} key={oneClub.id} />;
+    <div>
+      {clubs.map((club) => {
+        return <ClubCard club={club} key={club.id} />;
       })}
     </div>
   );
 };
 export default AllClubsPage;
+
