@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { API_URL } from "../config";
 import { Link } from "react-router-dom";
 import "../stylesheet/AllClubsPage.css";
+import ClubCard from "../components/ClubCard";
 
 const AllClubsPage = () => {
   const [clubs, setClubs] = useState([]);
@@ -28,3 +29,4 @@ const AllClubsPage = () => {
   );
 };
 export default AllClubsPage;
+

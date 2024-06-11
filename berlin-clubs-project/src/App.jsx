@@ -18,7 +18,7 @@ function App() {
     <div>
       <Navbar />
       <Routes>
-        <Route path="/edit-club" element={<EditClub />} />
+        <Route path="/edit-club/:clubId" element={<EditClub />} />
         <Route path="/add-club" element={<AddClub />} />
         <Route path="/" element={<HomePage />} />
         <Route path="/club-detail/:clubId" element={<ClubDetailPage />} />
