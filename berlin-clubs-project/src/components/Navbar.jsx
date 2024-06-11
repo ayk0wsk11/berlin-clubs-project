@@ -41,6 +41,9 @@ const Navbar = () => {
           <NavLink to="/clubs" activeclassName="active-link">
             All Clubs
           </NavLink>
+          <NavLink to="/add-club" activeclassName="active-link">
+            Add Clubs
+          </NavLink>
         </div>
 
 
