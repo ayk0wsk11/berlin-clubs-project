@@ -32,16 +32,27 @@ const ClubDetailPage = () => {
     return <p>Loading...</p>;
   }
 
+  const handleDelete = async (event) => {
+    event.preventDefault();
+    try {
+      const response = await axios.delete(`${API_URL}/clubs/${clubId}`);
+      console.log("Deleted", response);
+    } catch (error) {
+      console.log(error);
+    }
+    nav('/clubs')
+  };
+
   return (
     <div id="clubmap-container">
       <div id="btn-container">
         <div>
-          <Link to={"/edit-club"}>
+          <Link to={`/edit-club/${clubId}`}>
             <button className="button">Edit</button>
           </Link>
         </div>
         <div>
-          <button className="button" onClick={() => {}}>
+          <button className="button" onClick={handleDelete}>
             Delete
           </button>
         </div>

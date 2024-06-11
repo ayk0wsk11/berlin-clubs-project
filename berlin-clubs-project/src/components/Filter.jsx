@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { API_URL } from "../config";
-import { Link } from "react-router-dom";
 import "../stylesheet/AllClubsPage.css";
 
 const Filter = ({ onGenreChange }) => {
