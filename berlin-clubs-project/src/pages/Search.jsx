@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import {API_URL} from '../config.js'
 
 const SearchComponent = () => {
   const [query, setQuery] = useState('');
@@ -7,7 +8,7 @@ const SearchComponent = () => {
 
   const handleSearch = async () => {
     try {
-      const response = await axios.get(`http://localhost:5005/clubs/name=${query}`);
+      const response = await axios.get(`${API_URL}/clubs/${clubId}`);
       setResult(response.data);
     } catch (error) {
       console.error('Error fetching data:', error);
@@ -17,7 +18,7 @@ const SearchComponent = () => {
     <div>
       <input
         type="text"
-        value={query}
+        value={clubId}
         onChange={(e) => setQuery(e.target.value)}
         placeholder="Search for a name"
       />

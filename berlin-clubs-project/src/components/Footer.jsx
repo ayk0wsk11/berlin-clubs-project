@@ -9,9 +9,8 @@ const Footer = () => {
         <div className="githubLogo">
           <img src={IconLogo} alt="Footer Image" className="footerImage" />
         </div>
-        <div className="githubLink">
-          Check our Best Clubs in LA  !{" "}
-          <a href="h">Party</a>
+        <div >
+          <a href= "/about"  >About Us </a>
         </div>
       </div>
     </footer>

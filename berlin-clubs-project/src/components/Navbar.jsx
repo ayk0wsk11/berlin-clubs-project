@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import IconLogo from "../../image/logo2.png"
+import { NavLink } from 'react-router-dom';
+
 
 const Navbar = () => {
   const [query, setQuery] = useState('');
@@ -12,7 +14,7 @@ const Navbar = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    navigate(`/search?query=${query}`);
+    navigate(`/clubs/${clubs.name}`);
     
   };
   return (
@@ -34,7 +36,15 @@ const Navbar = () => {
     <div className="icon">
     <img src= {IconLogo} className="icon-logo" />
     </div> 
-    
+
+    <div className="Clubs">
+          <NavLink to="/clubs" activeclassName="active-link">
+            All Clubs
+          </NavLink>
+        </div>
+
+
+
 </div>
 
 </nav>
