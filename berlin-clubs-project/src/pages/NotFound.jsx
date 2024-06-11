@@ -1,10 +1,24 @@
 import React from "react";
+import { useNavigate } from 'react-router-dom'
+import NotFoundImage from '../../image/404.png';
+import '../../src/NotFoundPage.css'; 
 
 const NotFoundPage = () => {
+  const navigate = useNavigate();
+
+  const handleReturnHome = () => {
+    navigate('/');
+  };
+
+
   return (
     <>
-      <h1>404 Page Not Found</h1>;
-      <p>The page you are looking for does not exist.</p>
+        <div className="not-found-container">
+        <img src={NotFoundImage} alt="Not Found" className="not-found-image" />
+        <button onClick={handleReturnHome} className="return-home-button">
+        Return to Home
+      </button>
+      </div>
 
     </>
   );

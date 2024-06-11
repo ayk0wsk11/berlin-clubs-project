@@ -34,7 +34,7 @@ const Navbar = () => {
     <div className="icon">
     <img src= {IconLogo} className="icon-logo" />
     </div> 
-    <div className="BeName">BE Clubs</div>
+    
 </div>
 
 </nav>
