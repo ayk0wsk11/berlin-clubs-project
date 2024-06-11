@@ -21,29 +21,8 @@ const AllClubsPage = () => {
 
   return (
     <div>
-      {clubs.map((oneClub) => {
-        return (
-          <div key={oneClub.id} id="all-clubs-container">
-            <div id="left-side">
-              <div id="header">
-                <Link to={`/club-detail/${oneClub.id}`}>
-                  <h1>{oneClub.name}</h1>
-                </Link>
-              </div>
-              <div id="genres">
-                {oneClub.genre.map((oneGenre, index) => (
-                  <label id="label" key={index}>
-                    {oneGenre}
-                  </label>
-                ))}
-              </div>
-            </div>
-            <div>
-            <img id="clubmap-image" src={oneClub.image} alt={oneClub.name} />
-
-            </div>
-          </div>
-        );
+      {clubs.map((club) => {
+        return <ClubCard club={club} key={club.id} />;
       })}
     </div>
   );

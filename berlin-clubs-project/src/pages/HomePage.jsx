@@ -26,7 +26,7 @@ const HomePage = () => {
       <h1>Wanna try out a new club?</h1>
       <div id="clubs-homepage">
         {clubs.map((club) => {
-          return <ClubCard oneClub={club} key={club.id} />;
+          return <ClubCard club={club} key={club.id} />;
         })}
       </div>
     </div>
