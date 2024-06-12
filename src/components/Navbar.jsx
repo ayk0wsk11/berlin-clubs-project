@@ -1,13 +1,18 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import IconLogo from "../../image/logo2.png"
-import { NavLink } from 'react-router-dom';
-import '../stylesheet/Navbar.css'
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import IconLogo from "../../image/logo2.png";
+import { NavLink } from "react-router-dom";
+import "../stylesheet/Navbar.css";
 
-
-const Navbar = () => {
-  const [query, setQuery] = useState('');
+const Navbar = ({currentUser, setCurrentUser}) => {
+  const [query, setQuery] = useState("");
   const navigate = useNavigate();
+  
+
+  const handleLogout = () => {
+    setCurrentUser(null);
+    nav("/");
+  };
 
   const handleInputChange = (event) => {
     setQuery(event.target.value);
@@ -16,11 +21,10 @@ const Navbar = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     navigate(`/clubs/${clubs.name}`);
-    
   };
   return (
     <nav className="navbar">
-            <form className="navbar-search" onSubmit={handleSubmit}>
+      <form className="navbar-search" onSubmit={handleSubmit}>
         <input
           type="text"
           name="query"
@@ -29,16 +33,17 @@ const Navbar = () => {
           placeholder="Search..."
           className="search-input"
         />
-        <button type="submit" className="search-button">Search</button>
+        <button type="submit" className="search-button">
+          Search
+        </button>
       </form>
 
-    <div className="navItems">
-                
-    <div className="icon">
-    <img src= {IconLogo} className="icon-logo" />
-    </div> 
+      <div className="navItems">
+        <div className="icon">
+          <img src={IconLogo} className="icon-logo" />
+        </div>
 
-    <div className="Clubs">
+        <div className="Clubs">
           <NavLink to="/clubs" activeclassName="active-link">
             All Clubs
           </NavLink>
@@ -46,14 +51,20 @@ const Navbar = () => {
             Add Clubs
           </NavLink>
         </div>
-
-
-
-</div>
-
-</nav>
-
-  )
+        <div></div>
+        {currentUser ? (
+          <button onClick={handleLogout}>Logout</button>
+        ) : (
+          <>
+            
+            <Link to="/login">
+              <button>Login</button>
+            </Link>
+          </>
+        )}
+      </div>
+    </nav>
+  );
 };
 
-export default Navbar
+export default Navbar;

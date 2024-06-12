@@ -7,7 +7,7 @@ import ClubCard from "../components/ClubCard";
 
 const AllClubsPage = () => {
   const [clubs, setClubs] = useState([]);
-  const [selectedGenre, setSelectedGenre] = useState("");
+  const [selectedGenres, setSelectedGenres] = useState("");
 
   useEffect(() => {
     const fetchClubs = async () => {
@@ -21,12 +21,13 @@ const AllClubsPage = () => {
     fetchClubs();
   }, []);
 
-  const handleGenreChange = (genre) => {
-    setSelectedGenre(genre);
+  
+  const handleGenreChange = (genres) => {
+    setSelectedGenres(genres);
   };
 
-  const filteredClubs = selectedGenre
-    ? clubs.filter((club) => club.genre.includes(selectedGenre))
+  const filteredClubs = selectedGenres.length > 0
+    ? clubs.filter((club) => selectedGenres.every((genre) => club.genre.includes(genre)))
     : clubs;
 
   return (
@@ -38,4 +39,5 @@ const AllClubsPage = () => {
     </div>
   );
 };
+
 export default AllClubsPage;
