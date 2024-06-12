@@ -4,4 +4,10 @@
     align-items: center;
     width: 100vw;
     background-color: grey;
+    max-width: auto;
+
 }
+#add-form label {
+    display: block;
+    margin-bottom: 45px;
+  }

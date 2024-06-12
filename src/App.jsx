@@ -21,8 +21,19 @@ import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 
 
+
 function App() {
+
+
+
+
+
+
+
+
+
   return (
+
     <div>
       <Navbar />
       <Routes>
@@ -33,7 +44,6 @@ function App() {
         <Route path="/clubs" element={<AllClubsPage />} />
         <Route path="*" element={<NotFound />} />
         <Route path="/about" element={<About />} />
-        <Route path="/search" component={SearchPage} />
       </Routes>
       <Footer />
     </div>

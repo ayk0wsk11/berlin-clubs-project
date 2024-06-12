@@ -1,4 +1,5 @@
 import React from 'react';
+import pic from '../../image/dev1.png'
 
 const About = () => {
   const containerStyle = {
@@ -12,7 +13,7 @@ const About = () => {
   const backgroundStyle = {
     width: '100%',
     height: '100%',
-    backgroundImage: 'url("https://your-image-url.com/path/to/image.jpg")',
+    backgroundImage: `url(${pic})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     position: 'absolute',

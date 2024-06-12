@@ -4,10 +4,13 @@ import { API_URL } from "../config";
 import "../stylesheet/AllClubsPage.css";
 import Filter from "../components/Filter";
 import ClubCard from "../components/ClubCard";
+import Search from "./Search"
 
 const AllClubsPage = () => {
   const [clubs, setClubs] = useState([]);
   const [selectedGenre, setSelectedGenre] = useState("");
+  const [query, setQuery] = useState('');
+
 
   useEffect(() => {
     const fetchClubs = async () => {
@@ -28,11 +31,21 @@ const AllClubsPage = () => {
   const filteredClubs = selectedGenre
     ? clubs.filter((club) => club.genre.includes(selectedGenre))
     : clubs;
+  
+  
 
   return (
+
     <div>
-      <Filter onGenreChange={handleGenreChange} />
-      {filteredClubs.map((club) => {
+
+      <Filter onGenreChange={handleGenreChange}  />
+      <Search query={query} setQuery={setQuery}/>
+      {filteredClubs.filter((oneClub)=> {
+        if (oneClub.name.includes(query))
+          {return true
+          }
+
+      }).map((club) => {
         return <ClubCard club={club} key={club.id} />;
       })}
     </div>

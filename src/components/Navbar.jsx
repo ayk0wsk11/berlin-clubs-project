@@ -5,6 +5,7 @@ import { NavLink } from 'react-router-dom';
 import '../stylesheet/Navbar.css'
 
 
+
 const Navbar = () => {
   const [query, setQuery] = useState('');
   const navigate = useNavigate();
@@ -13,47 +14,27 @@ const Navbar = () => {
     setQuery(event.target.value);
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    navigate(`/clubs/${clubs.name}`);
-    
-  };
+
   return (
+
     <nav className="navbar">
-            <form className="navbar-search" onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="query"
-          value={query}
-          onChange={handleInputChange}
-          placeholder="Search..."
-          className="search-input"
-        />
-        <button type="submit" className="search-button">Search</button>
-      </form>
-
-    <div className="navItems">
-                
-    <div className="icon">
-    <img src= {IconLogo} className="icon-logo" />
-    </div> 
-
-    <div className="Clubs">
-          <NavLink to="/clubs" activeclassName="active-link">
+      <div className="icon">
+        <NavLink to="/">
+          <img src={IconLogo} className="icon-logo" alt="Icon Logo" />
+        </NavLink>
+      </div>
+      <div className="navItems">
+        <div className="Clubs">
+          <NavLink to="/clubs" activeclassname="active-link">
             All Clubs
           </NavLink>
-          <NavLink to="/add-club" activeclassName="active-link">
+          <NavLink to="/add-club" activeclassname="active-link">
             Add Clubs
           </NavLink>
         </div>
-
-
-
-</div>
-
-</nav>
-
-  )
+      </div>
+    </nav>
+  );
 };
 
-export default Navbar
+export default Navbar;
