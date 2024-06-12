@@ -1,5 +1,5 @@
 import React from 'react';
-import pic from '../../image/dev1.png'
+import pic from '../assets/image/dev1.png'
 
 const About = () => {
   const containerStyle = {

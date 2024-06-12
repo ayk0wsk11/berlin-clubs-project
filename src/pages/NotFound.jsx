@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from 'react-router-dom'
-import NotFoundImage from '../../image/404.png';
-import '../../src/NotFoundPage.css'; 
+import NotFoundImage from '../assets/image/404.png';
+import '../stylesheet/NotFoundPage.css'; 
 
 const NotFoundPage = () => {
   const navigate = useNavigate();

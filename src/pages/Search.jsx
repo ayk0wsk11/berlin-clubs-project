@@ -28,8 +28,6 @@ const SearchComponent = ({query, setQuery}) => {
         onChange={(e) => setQuery(e.target.value)}
         placeholder="Search for a name"
       />
-      <button onClick={handleSearch}>Search</button>
-
     </div>
   );
 };
