@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import IconLogo from "../../image/logo2.png"
 import { NavLink } from 'react-router-dom';
+import '../stylesheet/Navbar.css'
 
 
 const Navbar = () => {

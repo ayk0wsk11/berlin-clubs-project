@@ -1,6 +1,7 @@
 // Footer.jsx
 import React from "react";
-import IconLogo from "../../image/logo2.png"
+import IconLogo from "../../image/logo2.png";
+import "../stylesheet/Footer.css"
 
 const Footer = () => {
   return (
