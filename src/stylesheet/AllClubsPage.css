@@ -1,41 +1,6 @@
-body {
-  width: 100%;
-}
-
 #all-clubs-container {
+  padding: 3%;
   display: flex;
-  width: 90vw;
-  justify-content: space-between;
-  background-color: aqua;
-  border: 1px solid black;
-  padding: 10px;
-  margin: 10px;
-}
-
-#header {
-  background-color: brown;
-}
-
-#genres {
-  background-color: grey;
-  display: flex;
-}
-
-#left-side {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
-  border: 1px solid black;
-  margin: 5px 2px;
-}
-
-#label {
-  background-color: rgb(74, 74, 214);
-  border: 2px solid black;
-  color: white;
-  font-weight: bolder;
-  border-radius: 5px;
-  margin: 5px;
 }

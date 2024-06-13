@@ -32,9 +32,11 @@ const AllClubsPage = () => {
   return (
     <div>
       <Filter onGenreChange={handleGenreChange} />
-      {filteredClubs.map((club) => {
-        return <ClubCard club={club} key={club.id} />;
-      })}
+      <div id="all-clubs-container">
+        {filteredClubs.map((club) => {
+          return <ClubCard club={club} key={club.id} />;
+        })}
+      </div>
     </div>
   );
 };
