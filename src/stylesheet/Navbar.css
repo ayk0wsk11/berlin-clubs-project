@@ -1,49 +1,40 @@
-/* Navbar.css */
-
-.navbar {
+#navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: rgb(32, 13, 38);
-  padding: 10px 20px;
+  background-color: #161616;
+  padding: 20px 40px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.icon {
-  display: flex;
-  align-items: center;
-}
-
-.icon-logo {
-  height: 50px;
-  width: auto;
-}
-
-.navItems {
-  display: flex;
-  align-items: center;
-}
-
-.Clubs {
-  display: flex;
-  gap: 20px;
-}
-
-.Clubs a {
+#navbar a {
   color: white;
-  text-decoration: none;
-  font-size: 16px;
-  padding: 8px 12px;
-  transition: background-color 0.3s;
 }
 
-.Clubs a:hover {
-  background-color: #555;
-  border-radius: 4px;
+#berlin-title {
+  color: white;
+  font-size: 35px;
 }
 
-.active-link {
-  background-color: #007BFF;
-  border-radius: 4px;
-  padding: 8px 12px;
+#clubs-title {
+  color: #751515;
+  font-size: 35px;
+}
+
+#login-button {
+  color: white;
+  border: 1px solid white;
+  border-radius: 20px;
+  font-size: medium;
+  padding: 10px 15px;
+  background-color: transparent;
+}
+
+#logout-button {
+  color: white;
+  border: 0px;
+  border-radius: 20px;
+  font-size: medium;
+  padding: 10px 15px;
+  background-color: #751515;
 }

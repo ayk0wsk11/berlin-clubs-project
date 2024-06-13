@@ -2,8 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { API_URL } from "../config";
-import Loading from "../components/Loading";
-import '../stylesheet/ClubDetailPage.css'
+import "../stylesheet/ClubDetailPage.css";
 
 const ClubDetailPage = ({ currentUser }) => {
   const [oneClub, setOneClub] = useState(null);
@@ -31,7 +30,7 @@ const ClubDetailPage = ({ currentUser }) => {
   }, [clubId]);
 
   if (!oneClub) {
-    return <Loading/>;
+    return <p>loading</p>;
   }
 
   const handleDelete = async (event) => {
@@ -66,97 +65,84 @@ const ClubDetailPage = ({ currentUser }) => {
   };
 
   return (
-    <div id="clubmap-container">
-      <div id="btn-container">
-        <div>
-          <Link to={`/edit-club/${clubId}`}>
-            <button className="button">Edit</button>
-          </Link>
+    <div id="club-detail-container">
+      <div id="c-d-top">
+        <div id="c-d-infos">
+          <div>
+            <h2>{oneClub.name}</h2>
+            <div id="genres">
+              {oneClub.genre.map((oneGenre, index) => (
+                <div id="label" key={index}>
+                  {oneGenre}
+                </div>
+              ))}
+            </div>
+            <div id="c-d-description">{oneClub.description}</div>
+          </div>
+          <div id="button-container">
+            <div>
+              <a href={oneClub.src.ra_guide} target="_blank">
+                <button id="ra-button">
+                  <b>RA Guide</b>
+                </button>
+              </a>
+            </div>
+            <div>
+              <button id="edit-button" onClick={handleDelete}>
+                <b>Edit</b>
+              </button>
+              <Link to={`/edit-club/${clubId}`}>
+                <button id="delete-button" onClick={handleDelete}>
+                  <b>Delete</b>
+                </button>
+              </Link>
+            </div>
+          </div>
         </div>
-        <div>
-          <button className="button" onClick={handleDelete}>
-            Delete
-          </button>
+        <div id="c-d-img">
+          <img src={oneClub.image} alt={oneClub.name} />
         </div>
       </div>
-
-      <div key={oneClub.id} id="clubmap-card">
-        <div id="linkeable-detail">
-          <div id="img-header">
-            <img id="clubmap-image" src={oneClub.image} alt={oneClub.name} />
-            <h2>{oneClub.name}</h2>
-          </div>
-          <div></div>
-        </div>
-        <div id="clubcard-container">
-          <div id="clubcard-details">
-            <h2>Details:</h2>
-            {oneClub.genre.map((oneGenre, index) => (
-              <label id="label" key={index}>
-                {oneGenre}
-              </label>
-            ))}
-            <p>Capacity: {oneClub.capacity}</p>
-            <p>
-              Description: <br /> {oneClub.description}
-            </p>
-            <p>
-              <a href={oneClub.src.ra_guide} target="_blank">
-                Link to resident advisor
-              </a>
-            </p>
-          </div>
-          <div id="clubcard-address">
-            <div id="clubcard-address-instruction">
-              <h3>Address:</h3>
-              <br />
-              <p>{oneClub.address.street}</p>
-              <p>
-                {oneClub.address.zip}, {oneClub.address.city}
-              </p>
-            </div>
-            <div id="iframe">
-              <iframe src={oneClub.src.iframe} />
-            </div>
-          </div>
-          </div>
-
+      <div id="c-d-bottom">
+        <div id="c-d-comments">
+          <h3>Comments:</h3>
+          {currentUser ? (
+            <form onSubmit={handleCommentSubmit}>
+              <textarea
+                value={newComment}
+                onChange={(e) => setNewComment(e.target.value)}
+                placeholder="Write a comment"
+                required
+              />
+              <button type="submit">Submit</button>
+            </form>
+          ) : (
+            <span id="no-login">
+              Please <Link to="/login">login</Link> or sign up to leave a
+              comment
+            </span>
+          )}
           <div>
-            <h3>Comments:</h3>
-            {currentUser ? (
-              <form onSubmit={handleCommentSubmit}>
-                <textarea
-                  value={newComment}
-                  onChange={(e) => setNewComment(e.target.value)}
-                  placeholder="Write a comment"
-                  required
-                />
-                <button type="submit">Submit</button>
-              </form>
-            ) : (
-              <span id="no-login">
-                Please <Link to="/login">login</Link> or sign up to leave a comment
-              </span>
-            )}
-            <div>
-              {Array.isArray(oneClub.comments)
-                ? oneClub.comments.map((comment, index) => (
-                    <div key={index}>
-                      <p>
-                        <strong>{comment.user}:</strong> {comment.text}
-                      </p>
-                    </div>
-                  ))
-                : oneClub.comments && (
-                    <div>
-                      <p>
-                        <strong>{oneClub.comments.user}:</strong>{" "}
-                        {oneClub.comments.text}
-                      </p>
-                    </div>
-                  )}
+            {Array.isArray(oneClub.comments)
+              ? oneClub.comments.map((comment, index) => (
+                  <div key={index}>
+                    <p>
+                      <strong>{comment.user}:</strong> {comment.text}
+                    </p>
+                  </div>
+                ))
+              : oneClub.comments && (
+                  <div>
+                    <p>
+                      <strong>{oneClub.comments.user}:</strong>{" "}
+                      {oneClub.comments.text}
+                    </p>
+                  </div>
+                )}
           </div>
         </div>
+
+        <iframe id="c-d-map" src={oneClub.src.iframe} />
       </div>
     </div>
   );

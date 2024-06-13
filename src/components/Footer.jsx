@@ -1,22 +1,17 @@
-// Footer.jsx
 import React from "react";
-import IconLogo from "../assets/image/logo2.png";
-import "../stylesheet/Footer.css"
+import "../stylesheet/Footer.css";
 
 const Footer = () => {
   return (
-    <footer className="footer">
-      <div className="footerItems">
-        <div>
-          <img src={IconLogo} alt="Footer Image" className="footerImage" />
-        </div>
-        <div >
-          <a href= "/about"  >About Us </a>
-        </div>
-      </div>
+    <footer id="footerbar">
+      <a href="/about">
+        about:<span id="berlin-title-f">berlin</span>
+        <span id="clubs-title-f">
+          <b>clubs</b>
+        </span>
+      </a>
     </footer>
   );
 };
 
 export default Footer;
-

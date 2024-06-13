@@ -2,9 +2,14 @@ body {
   margin: 0;
   padding: 0;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-size: larger;
   line-height: 1.5;
   color: white;
-  background-color: #362323;
+  background-color: #6c5a5a;
+}
+
+p {
+  font-size: 300px;
 }
 
 a {
@@ -29,4 +34,11 @@ a {
 
 .search-container button {
   padding: 0.5em 1em;
+}
+
+#spa {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
 }

@@ -10,11 +10,14 @@ const ClubCard = ({ club }) => {
           <h3 id="header">{club.name}</h3>
 
           <div id="genres">
-            {club.genre.map((genre, index) => (
-              <div id="label" key={index}>
-                {genre}
-              </div>
-            ))}
+            {club.genre.map((genre, index) => {
+              if (index < 3)
+                return (
+                  <div id="label" key={index}>
+                    {genre}
+                  </div>
+                );
+            })}
           </div>
         </div>
       </div>

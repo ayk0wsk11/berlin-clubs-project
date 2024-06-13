@@ -1,11 +1,109 @@
-/* body{
-    background-color: black;
-} */
-
-#spinner {
+#club-detail-container {
+  width: 97vw;
+  padding: 1vw 1.5vw;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
-  width: 100vw;
+}
 
+#c-d-top,
+#c-d-bottom {
+  display: flex;
+}
+
+#c-d-infos,
+#c-d-img,
+#c-d-map,
+#c-d-comments {
+  margin: 5px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.488);
+  border: 1px solid transparent;
+  border-radius: 30px;
+}
+
+#c-d-infos:hover,
+#c-d-img:hover,
+#c-d-map:hover,
+#c-d-comments:hover {
+  background-color: rgba(0, 0, 0, 0.672);
+  border: 1px solid transparent;
+}
+
+#c-d-infos {
+  width: 34%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#c-d-infos h2 {
+  margin-top: 5px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+#c-d-description {
+  margin: 15px 20px;
+  text-align: justify;
+}
+
+#c-d-img {
+  width: 66%;
+}
+
+#c-d-img img {
+  width: 100%;
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+  overflow: hidden;
+  border-radius: 30px;
+}
+
+#c-d-comments {
+  width: 66%;
+}
+
+#c-d-map {
+  height: 300px;
+  width: 34%;
+  padding: 10px;
+  border-radius: 30px;
+}
+
+#button-container {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#ra-button,
+#edit-button,
+#delete-button {
+  margin: 5px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: 2px solid transparent;
+  color: white;
+  font-size: medium;
+}
+
+#ra-button {
+  background-color: #751515;
+}
+
+#ra-button:hover,
+#edit-button:hover {
+  border-color: white;
+}
+
+#edit-button,
+#delete-button {
+  background-color: #181818b5;
+}
+
+#delete-button:hover {
+  color: firebrick;
+  border-color: firebrick;
 }

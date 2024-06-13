@@ -5,13 +5,42 @@
   justify-content: center;
   align-items: center;
   padding: 20px;
-  background-color: #070315;
-  min-height: 100vh;
-  font-family: Arial, sans-serif;
 }
 
 #clubs-homepage {
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+}
+
+#homepage-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+#homepage-buttons button {
+  margin: 5px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: 2px solid #6c5a5a;
+}
+
+#homepage-buttons button:hover {
+  border: 2px solid white;
+}
+
+#show-other-button {
+  color: white;
+  border: 0px;
+  font-size: medium;
+  padding: 5px 8px;
+  background-color: #181818b5;
+}
+
+#show-all-button {
+  color: white;
+  border: 0px;
+  font-size: medium;
+  padding: 5px 8px;
+  background-color: #751515;
 }
