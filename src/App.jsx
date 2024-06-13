@@ -31,7 +31,7 @@ function App() {
         <Route path="/edit-club/:clubId" element={<EditClub />} />
         <Route path="/add-club" element={<AddClub />} />
         <Route path="/" element={<HomePage />} />
-        <Route path="/club-detail/:clubId" element={<ClubDetailPage />} />
+        <Route path="/club-detail/:clubId" element={<ClubDetailPage currentUser={currentUser}/>} />
         <Route path="/clubs" element={<AllClubsPage />} />
         <Route path="*" element={<NotFound />} />
         <Route path="/about" element={<About />} />
