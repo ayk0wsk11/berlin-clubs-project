@@ -1,7 +1,6 @@
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import React, { useState } from 'react';
-import SearchPage from './pages/Search';
 import About from './pages/About';
 
 /********************** Pages ***********************/

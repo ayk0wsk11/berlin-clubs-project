@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
-
 import { API_URL } from "../config";
+import Loading from "../components/Loading";
+import '../stylesheet/ClubDetailPage.css'
 
 const ClubDetailPage = ({ currentUser }) => {
   const [oneClub, setOneClub] = useState(null);
@@ -30,7 +31,7 @@ const ClubDetailPage = ({ currentUser }) => {
   }, [clubId]);
 
   if (!oneClub) {
-    return <p>Loading...</p>;
+    return <Loading/>;
   }
 
   const handleDelete = async (event) => {

@@ -21,7 +21,7 @@ const Login = ({ setCurrentUser }) => {
         }
       });
       if (!foundUser) {
-        setError("Username not found. Please sign up below.");
+        setError("Password or username do not match. If you haven't signed up, please sign up below");
       } else {
         const doesPasswordMatch = foundUser.password === password;
 
@@ -29,7 +29,7 @@ const Login = ({ setCurrentUser }) => {
           setCurrentUser(foundUser);
           nav("/clubs");
         } else {
-          setError("Password does not match a username.");
+          setError("Password or username do not match.");
         }
       }
     } catch (error) {
