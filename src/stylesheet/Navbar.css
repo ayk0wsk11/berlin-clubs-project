@@ -1,0 +1,49 @@
+/* Navbar.css */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(32, 13, 38);
+  padding: 10px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+}
+
+.icon-logo {
+  height: 50px;
+  width: auto;
+}
+
+.navItems {
+  display: flex;
+  align-items: center;
+}
+
+.Clubs {
+  display: flex;
+  gap: 20px;
+}
+
+.Clubs a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 8px 12px;
+  transition: background-color 0.3s;
+}
+
+.Clubs a:hover {
+  background-color: #555;
+  border-radius: 4px;
+}
+
+.active-link {
+  background-color: #007BFF;
+  border-radius: 4px;
+  padding: 8px 12px;
+}

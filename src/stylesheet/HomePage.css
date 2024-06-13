@@ -4,6 +4,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 20px;
+  background-color: #070315;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
 }
 
 #clubs-homepage {

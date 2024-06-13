@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
-
 import { API_URL } from "../config";
+import Loading from "../components/Loading";
+import '../stylesheet/ClubDetailPage.css'
 
-const ClubDetailPage = () => {
+const ClubDetailPage = ({ currentUser }) => {
   const [oneClub, setOneClub] = useState(null);
+  const [newComment, setNewComment] = useState("");
   const { clubId } = useParams();
   const nav = useNavigate();
 
@@ -29,7 +31,7 @@ const ClubDetailPage = () => {
   }, [clubId]);
 
   if (!oneClub) {
-    return <p>Loading...</p>;
+    return <Loading/>;
   }
 
   const handleDelete = async (event) => {
@@ -40,7 +42,27 @@ const ClubDetailPage = () => {
     } catch (error) {
       console.log(error);
     }
-    nav('/clubs')
+    nav("/clubs");
+  };
+
+  const handleCommentSubmit = async (event) => {
+    event.preventDefault();
+    const newCommentObject = {
+      text: newComment,
+      user: currentUser.username,
+    };
+    const updatedComments = Array.isArray(oneClub.comments)
+      ? [...oneClub.comments, newCommentObject]
+      : [newCommentObject];
+    try {
+      const response = await axios.patch(`${API_URL}/clubs/${clubId}`, {
+        comments: updatedComments,
+      });
+      setOneClub({ ...oneClub, comments: updatedComments });
+      setNewComment("");
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -96,6 +118,43 @@ const ClubDetailPage = () => {
             <div id="iframe">
               <iframe src={oneClub.src.iframe} />
             </div>
+          </div>
+          </div>
+
+          <div>
+            <h3>Comments:</h3>
+            {currentUser ? (
+              <form onSubmit={handleCommentSubmit}>
+                <textarea
+                  value={newComment}
+                  onChange={(e) => setNewComment(e.target.value)}
+                  placeholder="Write a comment"
+                  required
+                />
+                <button type="submit">Submit</button>
+              </form>
+            ) : (
+              <span id="no-login">
+                Please <Link to="/login">login</Link> or sign up to leave a comment
+              </span>
+            )}
+            <div>
+              {Array.isArray(oneClub.comments)
+                ? oneClub.comments.map((comment, index) => (
+                    <div key={index}>
+                      <p>
+                        <strong>{comment.user}:</strong> {comment.text}
+                      </p>
+                    </div>
+                  ))
+                : oneClub.comments && (
+                    <div>
+                      <p>
+                        <strong>{oneClub.comments.user}:</strong>{" "}
+                        {oneClub.comments.text}
+                      </p>
+                    </div>
+                  )}
           </div>
         </div>
       </div>

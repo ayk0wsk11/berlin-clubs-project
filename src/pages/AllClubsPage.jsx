@@ -4,10 +4,13 @@ import { API_URL } from "../config";
 import "../stylesheet/AllClubsPage.css";
 import Filter from "../components/Filter";
 import ClubCard from "../components/ClubCard";
+import Search from "./Search";
 
 const AllClubsPage = () => {
   const [clubs, setClubs] = useState([]);
-  const [selectedGenre, setSelectedGenre] = useState("");
+  const [query, setQuery] = useState("");
+
+  const [selectedGenres, setSelectedGenres] = useState("");
 
   useEffect(() => {
     const fetchClubs = async () => {
@@ -21,23 +24,34 @@ const AllClubsPage = () => {
     fetchClubs();
   }, []);
 
-  const handleGenreChange = (genre) => {
-    setSelectedGenre(genre);
+  const handleGenreChange = (genres) => {
+    setSelectedGenres(genres);
   };
 
-  const filteredClubs = selectedGenre
-    ? clubs.filter((club) => club.genre.includes(selectedGenre))
-    : clubs;
+  const filteredClubs =
+    selectedGenres.length > 0
+      ? clubs.filter((club) =>
+          selectedGenres.every((genre) => club.genre.includes(genre))
+        )
+      : clubs;
 
   return (
     <div>
       <Filter onGenreChange={handleGenreChange} />
+      <Search query={query} setQuery={setQuery} />
       <div id="all-clubs-container">
-        {filteredClubs.map((club) => {
-          return <ClubCard club={club} key={club.id} />;
-        })}
+        {filteredClubs
+          .filter((oneClub) => {
+            if (oneClub.name.includes(query)) {
+              return true;
+            }
+          })
+          .map((club) => {
+            return <ClubCard club={club} key={club.id} />;
+          })}
       </div>
     </div>
   );
 };
+
 export default AllClubsPage;

@@ -1,0 +1,25 @@
+  /*Footer css*/
+  .footer {
+  
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgb(32, 13, 38); /* Example background color */
+    color: #213547; /* Example text color */
+    text-align: center; /* Center text horizontally */
+  }
+  .footerItems {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .footerImage {
+    left: 0;
+    max-width: 50px; /* Limit image width to 100px */
+    max-height: 50px; /* Limit image height to 50px */
+  }
+  
+  /*Footer css*/

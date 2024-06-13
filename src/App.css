@@ -9,4 +9,24 @@ body {
 
 a {
   text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+
+.search-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 400px; /* Adjust width as needed */
+  margin: auto; /* Center the container horizontally */
+}
+
+.search-container input {
+  flex: 1;
+  padding: 0.5em;
+  margin-right: 10px; /* Add space between input and button */
+}
+
+.search-container button {
+  padding: 0.5em 1em;
 }
