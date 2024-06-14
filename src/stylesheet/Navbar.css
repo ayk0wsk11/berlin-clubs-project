@@ -21,20 +21,29 @@
   font-size: 35px;
 }
 
-#login-button {
+#login-button,
+#logout-button {
   color: white;
-  border: 1px solid white;
   border-radius: 20px;
   font-size: medium;
   padding: 10px 15px;
+}
+
+#login-button {
+  border: 1px solid white;
   background-color: transparent;
 }
 
+#login-button:hover {
+  color: #161616;
+  background-color: white;
+}
+
 #logout-button {
-  color: white;
-  border: 0px;
-  border-radius: 20px;
-  font-size: medium;
-  padding: 10px 15px;
+  border: 1px solid #751515;
   background-color: #751515;
+}
+
+#logout-button:hover {
+  border-color: white;
 }

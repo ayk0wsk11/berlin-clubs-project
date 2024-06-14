@@ -1,22 +1,42 @@
+#all-clubs-page {
+  display: flex;
+  flex-direction: column;
+}
+
+#a-c-header {
+  padding: 2% 3% 1%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 #all-clubs-container {
-  padding: 3%;
+  padding: 1% 3% 3%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.dropdown {
+#filter {
+  height: 40px;
   position: relative;
   display: inline-block;
 }
 
-.dropdown-toggle {
-  background-color: #4CAF50;
+#genre-button {
+  background-color: #751515;
   color: white;
   padding: 10px;
   font-size: 16px;
   border: none;
   cursor: pointer;
+  border-radius: 30px;
+  border: 1px solid transparent;
+  font-size: large;
+}
+
+#genre-button:hover {
+  border-color: white;
 }
 
 .dropdown-menu {
@@ -24,11 +44,11 @@
   position: absolute;
   background-color: #f9f9f9;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 
-.dropdown-menu button{
+.dropdown-menu button {
   background-color: white;
   color: black;
 }
@@ -46,4 +66,38 @@
 
 input[type="checkbox"] {
   margin-right: 10px;
+}
+
+#search-container {
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 400px; /* Adjust width as needed */
+  background-color: #181818;
+  border: 1px solid transparent;
+  flex: 1;
+  margin: 0px 10px;
+  border-radius: 30px;
+  text-align: center;
+  color: white;
+}
+
+#add-club-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 37px;
+  width: 37px;
+  padding: 1px 3px 5px;
+  color: white;
+  background-color: #4caf50;
+  border: 1px solid transparent;
+  border-radius: 30px;
+  font-size: xx-large;
+}
+
+#add-club-button:hover {
+  border-color: white;
 }

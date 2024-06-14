@@ -1,10 +1,11 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { API_URL } from "../config";
 import "../stylesheet/AllClubsPage.css";
 import Filter from "../components/Filter";
 import ClubCard from "../components/ClubCard";
-import Search from "./Search";
+import Search from "../components/Search";
 
 const AllClubsPage = () => {
   const [clubs, setClubs] = useState([]);
@@ -36,9 +37,16 @@ const AllClubsPage = () => {
       : clubs;
 
   return (
-    <div>
-      <Filter onGenreChange={handleGenreChange} />
-      <Search query={query} setQuery={setQuery} />
+    <div id="all-clubs-page">
+      <div id="a-c-header">
+        <Filter onGenreChange={handleGenreChange} />
+        <Search query={query} setQuery={setQuery} />
+        <Link to="/add-club">
+          <div id="add-club-button">
+            <b>+</b>
+          </div>
+        </Link>
+      </div>
       <div id="all-clubs-container">
         {filteredClubs
           .filter((oneClub) => {

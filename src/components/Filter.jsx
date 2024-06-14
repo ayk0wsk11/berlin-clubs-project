@@ -51,36 +51,36 @@ const Filter = ({ onGenreChange }) => {
   };
 
   return (
-    <div className="dropdown">
-    <button onClick={toggleDropdown} className="dropdown-toggle">
-      Filter by Genre
-    </button>
-    {dropdownOpen && (
-      <div className="dropdown-menu">
-        <button
-          onClick={() => {
-            setSelectedGenres([]);
-            onGenreChange([]);
-          }}
-        >
-          Reset
-        </button>
-        {genres.map((genre, index) => (
-          <div key={index}>
-            <input
-              type="checkbox"
-              id={genre}
-              name={genre}
-              value={genre}
-              checked={selectedGenres.includes(genre)}
-              onChange={() => handleGenreChange(genre)}
-            />
-            <label htmlFor={genre}>{genre}</label>
-          </div>
-        ))}
-      </div>
-    )}
-  </div>
+    <div id="filter">
+      <button id="genre-button" onClick={toggleDropdown}>
+        Genre
+      </button>
+      {dropdownOpen && (
+        <div className="dropdown-menu">
+          <button
+            onClick={() => {
+              setSelectedGenres([]);
+              onGenreChange([]);
+            }}
+          >
+            Reset
+          </button>
+          {genres.map((genre, index) => (
+            <div key={index}>
+              <input
+                type="checkbox"
+                id={genre}
+                name={genre}
+                value={genre}
+                checked={selectedGenres.includes(genre)}
+                onChange={() => handleGenreChange(genre)}
+              />
+              <label htmlFor={genre}>{genre}</label>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
   );
 };
 
