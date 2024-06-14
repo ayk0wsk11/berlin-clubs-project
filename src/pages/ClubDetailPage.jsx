@@ -88,14 +88,15 @@ const ClubDetailPage = ({ currentUser }) => {
               </a>
             </div>
             <div>
-              <button id="edit-button" onClick={handleDelete}>
-                <b>Edit</b>
-              </button>
               <Link to={`/edit-club/${clubId}`}>
-                <button id="delete-button" onClick={handleDelete}>
-                  <b>Delete</b>
-                </button>
+                <button id="edit-button">
+                  <b>Edit</b>
+                </button>{" "}
               </Link>
+
+              <button id="delete-button" onClick={handleDelete}>
+                <b>Delete</b>
+              </button>
             </div>
           </div>
         </div>
