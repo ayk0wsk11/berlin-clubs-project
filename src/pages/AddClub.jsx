@@ -146,7 +146,7 @@ const AddClub = () => {
             }}
           ></input>
         </label>
-        <button>Update</button>
+        <button>Add Club</button>
       </form>
     </div>
   );
