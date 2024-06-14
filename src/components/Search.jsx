@@ -1,5 +1,5 @@
 import React from "react";
-import "../stylesheet/Search.css";
+import "../stylesheet/AllClubsPage.css";
 
 const SearchComponent = ({ query, setQuery }) => {
   return (

@@ -12,6 +12,7 @@ const NotFoundPage = () => {
   return (
     <>
       <div className="not-found-container">
+        <h3>Page not found</h3>
         <button onClick={handleReturnHome} className="return-home-button">
           Return to Home
         </button>
