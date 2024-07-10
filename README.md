@@ -1,4 +1,4 @@
-[See the App!](www.your-deploy-url-here.com) Berlin Clubs
+[See the App!](https://berlinclubs.netlify.app/) Berlin Clubs
 
 ## BERLIN CLUBS
 
@@ -20,7 +20,7 @@
 - **Rating-filter** - another filter, to filter for the most popular clubs
 - **Capacity-filter** - a filter, to filter for the capacity of the clubs
 
-## (Optional) Routes
+## Routes
 
 - GET /
   - renders the homepage
